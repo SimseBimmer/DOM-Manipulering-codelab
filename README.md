@@ -1,2 +1,1 @@
-# DOM manipulering-codeLab
-DOM manipulering opgaver og forståelse
+https://simsebimmer.github.io/DOM-Manipulering-codelab/
