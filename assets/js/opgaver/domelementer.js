@@ -1,13 +1,16 @@
 /* DOMcelementer */
 
 
-
 /* Opgave 1.1
 Du skal finde elementet med id="redFigure" og console logge det.
 Du skal finde elementet med id="yellowFigure" og console logge det. 
 */
 
-// din kode her
+const redFigure = document.getElementById('redFigure');
+const yellowFigure = document.getElementById('yellowFigure');
+
+console.log('Red figure:', redFigure);
+console.log('Yellow figure:', yellowFigure);
 
 
 /* opgave 1.2
@@ -15,9 +18,8 @@ Du skal ændre baggrundsfarve på de to elementer du har fundet i opgave 1.1
 farven på elementerne skal være blå. brug evt. elelement.style.backgroundColor
 */
 
-
-// din kode her
-
+redFigure.style.backgroundColor = 'blue';
+yellowFigure.style.backgroundColor = 'blue';
 
 
 /* opgave 2.1
@@ -26,8 +28,15 @@ Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 - et p med teksten: Jeg har løst opgave 2.1
 */
 
+const opgaveTwo = document.getElementById('opgaveTwo');
+const h2Element = document.createElement('h2');
+const pElement = document.createElement('p');
 
-// din kode her
+h2Element.textContent = 'Opgave 2.1 løsning';
+pElement.textContent = 'Jeg har løst opgave 2.1';
+
+opgaveTwo.appendChild(h2Element);
+opgaveTwo.appendChild(pElement);
 
 
 // opgave 3 liveHTML lists
@@ -35,7 +44,8 @@ Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 Du skal finde alle elementer med klassen purpleFigures og console logge resultatet
 */
 
-// din kode her
+const purpleFigures = document.getElementsByClassName('purpleFigures');
+console.log('Purple figures:', purpleFigures);
 
 
 /* opgave 3.2
@@ -44,7 +54,10 @@ til et array hvor du kan bruge map funktionen til at ændre baggrundsfarven til 
 array.from beskrivelse HER: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 */
 
-// din kode her
+const purpleFiguresArray = Array.from(purpleFigures);
+purpleFiguresArray.map(figure => {
+    figure.style.backgroundColor = 'red';
+});
 
 
 /* opgave 3.3
@@ -52,9 +65,9 @@ Brug din array til at ændre h3 elementets, inden i purpleFigures, tekst til RED
 myElement.children[0].innerHTML til at ændre 1. child elements inner html.
 */
 
-
-// din kode her
-
+purpleFiguresArray.map(figure => {
+    figure.children[0].innerHTML = 'RED';
+});
 
 
 /* opgave 4
@@ -69,9 +82,16 @@ const myData = {
     description: 'En tiger er et stort, katteagtig rovdyr med orange og sort striber i pelsen og skarpe tænder og kløer.'
 };
 
+const opgaveFour = document.getElementById('opgaveFour');
 
-// din kode her
+const h2Data = document.createElement('h2');
+const imgData = document.createElement('img');
+const pDescription = document.createElement('p');
 
+h2Data.textContent = myData.name;
+imgData.src = myData.image;
+pDescription.textContent = myData.description;
 
-
-
+opgaveFour.appendChild(h2Data);
+opgaveFour.appendChild(imgData);
+opgaveFour.appendChild(pDescription);
